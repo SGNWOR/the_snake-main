@@ -195,7 +195,7 @@ def main():
         screen.fill(BOARD_BACKGROUND_COLOR)
         apple.draw()
         snake.draw()
-       
+
         # Рисуем интерфейс.
         text_snake_l = font.render(
             f'Текущая длина: {snake.length}', True, INTR_COLOR)
