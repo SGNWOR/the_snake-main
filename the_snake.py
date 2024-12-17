@@ -155,7 +155,6 @@ def main():
     """Основная логика игры"""
     # Инициализируем pygame, создаем экземпляры классов, нач. скорость игры 20.
     pygame.init()
-    pygame.mixer.init()
     apple = Apple()
     snake = Snake()
 
@@ -166,10 +165,6 @@ def main():
 
     # Шрифт для интерфейса.
     font = pygame.font.Font(None, 25)
-
-    # Игровые звуки.
-    sound_eat = pygame.mixer.Sound('game_res\\eat_sound.wav')
-    sound_lose = pygame.mixer.Sound('game_res\\lose.wav')
 
     while True:
         clock.tick(game_speed)
@@ -185,7 +180,6 @@ def main():
             eat_apples += 1
             game_speed += 0.5
             apple.randomize_position(snake.positions)
-            sound_eat.play()
             # Проверяем условие смены рекорда.
             # Если текщий счетчик яблок больше рекорда, то меняем рекорд.
             if record < eat_apples:
@@ -196,7 +190,6 @@ def main():
             game_speed = 20
             eat_apples = 0
             apple.randomize_position(snake.positions)
-            sound_lose.play()
 
         # Рисуем фон, яблоко и змейку.
         background = pygame.image.load('game_res\\background.jpg')
