@@ -192,11 +192,10 @@ def main():
             apple.randomize_position(snake.positions)
 
         # Рисуем фон, яблоко и змейку.
-        background = pygame.image.load('game_res\\background.jpg')
-        screen.blit(background, (0, 0))
+        screen.fill(BOARD_BACKGROUND_COLOR)
         apple.draw()
         snake.draw()
-
+       
         # Рисуем интерфейс.
         text_snake_l = font.render(
             f'Текущая длина: {snake.length}', True, INTR_COLOR)
