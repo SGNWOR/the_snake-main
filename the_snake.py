@@ -169,10 +169,6 @@ def main():
     # Игровые звуки.
     sound_eat = pygame.mixer.Sound('game_res\\eat_sound.wav')
     sound_lose = pygame.mixer.Sound('game_res\\lose.wav')
-    main_music = pygame.mixer.Sound('game_res\\main_music.wav')
-
-    # Фоновая музыка.
-    main_music.play(-1)
 
     while True:
         clock.tick(game_speed)
