@@ -155,6 +155,7 @@ def main():
     """Основная логика игры"""
     # Инициализируем pygame, создаем экземпляры классов, нач. скорость игры 20.
     pygame.init()
+    pygame.mixer.init()
     apple = Apple()
     snake = Snake()
 
