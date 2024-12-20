@@ -45,12 +45,11 @@ class GameObject():
 
     def __init__(self):
         """Инициализация"""
-        self.position = ((SCREEN_WIDTH // 2), (SCREEN_HEIGHT // 2))
+        self.position = (SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
         self.body_color = None
 
     def draw(self):
         """Функция рисования объекта, заглушка для будущих экземпляров"""
-        pass
 
 
 class Apple(GameObject):
@@ -88,17 +87,15 @@ class Snake(GameObject):
         """Инициализация"""
         super().__init__()
         self.length = 1
-        self.position = ((SCREEN_WIDTH // 2), (SCREEN_HEIGHT // 2))
-        self.positions = [(self.position)]
+        self.positions = [self.position]
         self.direction = RIGHT
-        self.next_direction = None
+        self.next_direction = LEFT
         self.body_color = SNAKE_COLOR
 
     def update_direction(self):
-        """Управляем направлением джвижения змейки"""
+        """Управляем направлением движения змейки"""
         if self.next_direction:
-            self.direction = self.next_direction
-            self.next_direction = None
+            self.direction, self.next_direction = self.next_direction, None
 
     def move(self):
         """Движение змйеки"""
